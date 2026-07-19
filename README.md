@@ -1,6 +1,7 @@
 # @endrichtech/nestjs-multi-tenant
 
 [![CI](https://github.com/hendriabdg-coder/nestjs-multi-tenant/actions/workflows/ci.yml/badge.svg)](https://github.com/hendriabdg-coder/nestjs-multi-tenant/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/hendriabdg-coder/nestjs-multi-tenant/branch/main/graph/badge.svg)](https://codecov.io/gh/hendriabdg-coder/nestjs-multi-tenant)
 [![npm version](https://img.shields.io/npm/v/@endrichtech/nestjs-multi-tenant.svg)](https://www.npmjs.com/package/@endrichtech/nestjs-multi-tenant)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
