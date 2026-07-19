@@ -1,6 +1,8 @@
 version: 2
 updates:
-  # Library dependencies (pnpm workspace root)
+  # Library dependencies (pnpm workspace root).
+  # Major bumps are ignored here — they carry breaking changes and are handled
+  # deliberately, not via automated PRs. Patch/minor + security still flow.
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
@@ -9,15 +11,24 @@ updates:
     groups:
       dev-dependencies:
         dependency-type: "development"
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-major"
 
-  # Example app
+  # Example app — a private, unpublished demo. Keep it building on patch/minor;
+  # skip noisy major bumps entirely.
   - package-ecosystem: "npm"
     directory: "/example"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 3
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-major"
 
-  # GitHub Actions used in workflows
+  # GitHub Actions used in workflows (majors here are low-risk and allowed).
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
