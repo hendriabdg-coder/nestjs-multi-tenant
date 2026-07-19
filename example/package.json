@@ -1,0 +1,29 @@
+{
+  "name": "example-app",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Runnable demo: a two-endpoint NestJS API where no controller, service, or Prisma call ever mentions tenantId by hand.",
+  "scripts": {
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev --name init"
+  },
+  "dependencies": {
+    "@endrichtech/nestjs-multi-tenant": "workspace:*",
+    "@nestjs/common": "^11.0.1",
+    "@nestjs/core": "^11.0.1",
+    "@nestjs/platform-express": "^11.0.1",
+    "@prisma/client": "^6.19.3",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.5",
+    "prisma": "^6.19.3",
+    "typescript": "^5.7.3"
+  }
+}

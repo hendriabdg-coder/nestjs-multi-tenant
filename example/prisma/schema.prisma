@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// Deliberately no relation/FK to a Tenant table — kept minimal so the
+// example runs with zero seed data. In a real app, tenantId would reference
+// your actual Tenant model (see CoffeeShopHub's schema for that pattern).
+model Item {
+  id        String   @id @default(uuid())
+  tenantId  String
+  name      String
+  price     Int
+  createdAt DateTime @default(now())
+}

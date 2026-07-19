@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+*.log
+.env
+.DS_Store
+
+# example app
+example/dist/
+example/node_modules/
+example/prisma/dev.db
+example/prisma/dev.db-journal
+example/generated/

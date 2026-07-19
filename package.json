@@ -1,0 +1,97 @@
+{
+  "name": "@endrichtech/nestjs-multi-tenant",
+  "version": "0.1.0",
+  "description": "Row-level multi-tenant isolation for NestJS + Prisma: a Prisma Client Extension that auto-scopes every query by tenantId, plus an AsyncLocalStorage-backed NestJS integration layer. No more `where: { tenantId }` on every service method.",
+  "license": "MIT",
+  "author": "Hendri <hendriabdg@gmail.com>",
+  "homepage": "https://github.com/hendriabdg-coder/nestjs-multi-tenant#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hendriabdg-coder/nestjs-multi-tenant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hendriabdg-coder/nestjs-multi-tenant/issues"
+  },
+  "keywords": [
+    "nestjs",
+    "prisma",
+    "multi-tenant",
+    "multi-tenancy",
+    "row-level-security",
+    "saas",
+    "async-local-storage"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "ARCHITECTURE.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./prisma": {
+      "types": "./dist/prisma/index.d.ts",
+      "default": "./dist/prisma/index.js"
+    },
+    "./nestjs": {
+      "types": "./dist/nestjs/index.d.ts",
+      "default": "./dist/nestjs/index.js"
+    }
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "lint": "eslint \"src/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepublishOnly": "pnpm build"
+  },
+  "peerDependencies": {
+    "@nestjs/common": ">=10.0.0",
+    "@nestjs/core": ">=10.0.0",
+    "@prisma/client": ">=5.0.0",
+    "reflect-metadata": ">=0.1.13",
+    "rxjs": ">=7.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@nestjs/common": { "optional": true },
+    "@nestjs/core": { "optional": true },
+    "@prisma/client": { "optional": true },
+    "reflect-metadata": { "optional": true },
+    "rxjs": { "optional": true }
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@nestjs/common": "^11.0.1",
+    "@nestjs/core": "^11.0.1",
+    "@nestjs/testing": "^11.0.1",
+    "@prisma/client": "^6.19.3",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.5",
+    "@typescript-eslint/eslint-plugin": "^8.19.1",
+    "@typescript-eslint/parser": "^8.19.1",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.14.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.4.2",
+    "reflect-metadata": "^0.2.2",
+    "rimraf": "^6.0.1",
+    "rxjs": "^7.8.1",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.3"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
